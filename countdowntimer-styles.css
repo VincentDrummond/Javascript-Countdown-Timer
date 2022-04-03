@@ -1,0 +1,97 @@
+@font-face {
+    font-family: "DINCondensed";
+    src: url(./Countdown-Timer-Fonts/DINCondensed-Bold.ttf) format("ttf");
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+:root {
+/* FONTS */
+    font-size: 10px;
+/* COLOURS */
+    --wf-red: rgb(91, 22, 11);
+    --wf-grey: rgb(250, 235, 215);
+    --wf-white1: rgb(253, 246, 237);
+    --wf-brown: rgb(36, 34, 35);
+
+}
+
+header {
+    margin: 40px;
+    font-size: 5rem;
+}
+
+h1 {
+    font-size: 6rem;
+    border-bottom: solid 9px var(--wf-red);
+    font-family: "DINCondensed", Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: var(--wf-white1);
+}
+
+main {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+#countdownTimer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    width: 100vw;
+}
+
+.information {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    width: 100vw;
+    margin-top: 20px;
+}
+
+div {
+    width: 180px;
+    height: 180px;
+    margin: 5px;
+
+    border: solid 6px var(--wf-red);
+    border-radius: 8px;
+
+    font-family: "Playfair Display";
+    font-size: 6rem;
+
+    color:var(--wf-red);
+    background-color: var(--wf-white1);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: rgba(91,22,11,0.5) 0px 10px 20px 0px;
+}
+
+div.infobox {
+    height: 90px;
+    font-size: 3rem;
+    border: solid 3px var(--wf-red);
+}
