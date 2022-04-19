@@ -1,23 +1,31 @@
 
 // MATHS
-const DAYS_MATH =   1000 * 60 * 60 * 24
-                //  1000ms * 60s * 60m *25h = 86400000 ms in 24 hours
-const HOURS_MATH = 60 * 60000
-const MINS_MATH = 60000
-const SECS_MATH = 1000
+const DAYS_FACTOR = 24 * HOURS_FACTOR;  // 24H IN 1D
+const HOURS_FACTOR = 60 * MINS_FACTOR;  // 60M IN 1H
+const MINS_FACTOR = 60 * SECS_FACTOR;   // 60S IN 1M
+const SECS_FACTOR = 1000;               // 1000 MS IN 1S
+
+const FUTURE_DATE = Date.UTC(2022, 9, 1, 16);
+
+function timeDiff() {
 
 // DATES
 const THIS_DATE = Date.now();
-const FUTURE_DATE = Date.UTC(2022, 9, 1, 16);
+
 const TIME_ELAPSED = FUTURE_DATE - THIS_DATE;
 
-// VARIABLE DATA
-const DAYS = Math.floor((TIME_ELAPSED) / DAYS_MATH);
-const HOURS = Math.floor((TIME_ELAPSED / HOURS_MATH) % 24);
-const MINS = Math.floor((TIME_ELAPSED / MINS_MATH) % 60);
-const SECS = Math.floor((TIME_ELAPSED / SECS_MATH) % 60);
+// TIME DATA
+const days = Math.floor((TIME_ELAPSED) / DAYS_FACTOR);
+const hours = Math.floor((TIME_ELAPSED / HOURS_FACTOR) % 24);
+const mins = Math.floor((TIME_ELAPSED / MINS_FACTOR) % 60);
+const secs = Math.floor((TIME_ELAPSED / SECS_FACTOR) % 60);
 
-function timeDiff() {
+// CHANGE HTML
+document.getElementById("daysToGo").innerHTML = days;
+document.getElementById("hoursToGo").innerHTML = hours;
+document.getElementById("minsToGo").innerHTML = mins;
+document.getElementById("secsToGo").innerHTML = secs;
+
     return {
         DAYS,
         HOURS,
@@ -27,13 +35,7 @@ function timeDiff() {
 };
 
 function countDown() {
-    setInterval(timeDiff(), [1000]);
+    setInterval(timeDiff, 1000);
 };
 
-
-
-// CHANGE HTML
-document.getElementById("daysToGo").innerHTML = DAYS;
-document.getElementById("hoursToGo").innerHTML = HOURS;
-document.getElementById("minsToGo").innerHTML = MINS;
-document.getElementById("secsToGo").innerHTML = SECS;
+countDown();

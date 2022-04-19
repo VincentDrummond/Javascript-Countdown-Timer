@@ -1,6 +1,6 @@
 @font-face {
-    font-family: "DINCondensed";
-    src: url(./Countdown-Timer-Fonts/DINCondensed-Bold.ttf) format("ttf");
+    font-family: "DIN Condensed";
+    src: url(./Countdown-Timer-Fonts/DINCondensed-Bold.ttf);
 }
 
 *,
@@ -39,7 +39,7 @@ header {
 h1 {
     font-size: 6rem;
     border-bottom: solid 9px var(--wf-red);
-    font-family: "DINCondensed", Arial, Helvetica, sans-serif;
+    font-family: "DIN Condensed", Arial, Helvetica, sans-serif;
 }
 
 body {
